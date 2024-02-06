@@ -26,6 +26,7 @@ namespace MALIIDINOJWOČOKOLINO.Forms
                 string query = "SELECT * FROM users WHERE email = @username AND password = @password";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
+
                     command.Parameters.AddWithValue("@username", username);
                     command.Parameters.AddWithValue("@password", password);
 
@@ -34,6 +35,7 @@ namespace MALIIDINOJWOČOKOLINO.Forms
                     {
                         if (reader.Read())
                         {
+                            user.Id = reader.GetInt32("id");
                             user.Email = reader.GetString("email");
                             user.Password = reader.GetString("password");
                         }
