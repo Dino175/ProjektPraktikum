@@ -17,6 +17,7 @@ namespace MALIIDINOJWOČOKOLINO.Forms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            //ovo je login button
             string username = txtUsername.Text;
             string password = txtPassword.Text;
             User user = new User();
